@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd
+
+CURRDIR=$(pwd)
+
+git checkout git@git.ifsight.net:if-fulcrum/fulcrum.git
+
+$CURRDIR/fulcrum/bin/hinge up
