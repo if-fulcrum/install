@@ -4,6 +4,6 @@ cd
 
 CURRDIR=$(pwd)
 
-git checkout git@git.ifsight.net:if-fulcrum/fulcrum.git
+git checkout git@github.com:if-fulcrum/fulcrum.git
 
 $CURRDIR/fulcrum/bin/hinge up
