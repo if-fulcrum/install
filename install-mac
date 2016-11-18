@@ -12,8 +12,14 @@ if ! $(open -a Docker); then
   open -a Docker
 fi
 
-# clone fulcrum
+# clone or update fulcrum
 cd
-CURRDIR=$(pwd)
-git clone https://github.com/if-fulcrum/fulcrum.git &&
-$CURRDIR/fulcrum/bin/hinge up
+if [ ! -d fulcrum ]; then
+  git clone https://github.com/if-fulcrum/fulcrum.git
+  cd fulcrum
+else
+  cd fulcrum
+  git pull
+fi
+
+./bin/hinge up
