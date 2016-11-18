@@ -4,6 +4,6 @@ cd
 
 CURRDIR=$(pwd)
 
-git clone git@github.com:if-fulcrum/fulcrum.git
+git clone https://github.com/if-fulcrum/fulcrum.git
 
 $CURRDIR/fulcrum/bin/hinge up
