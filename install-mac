@@ -9,6 +9,7 @@ fi
 # install Docker if needed
 if ! $(open -a Docker); then
   brew cask install docker
+  open -a Docker
 fi
 
 # clone fulcrum
