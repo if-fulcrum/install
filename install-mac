@@ -1,9 +1,18 @@
 #!/bin/bash
 
+# install brew if needed
+if ! $(which -s brew); then
+  echo "Cannot find the brew command, installing homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# install Docker if needed
+if ! $(open -a Docker); then
+  brew cask install docker
+fi
+
+# clone fulcrum
 cd
-
 CURRDIR=$(pwd)
-
-git clone https://github.com/if-fulcrum/fulcrum.git
-
+git clone https://github.com/if-fulcrum/fulcrum.git &&
 $CURRDIR/fulcrum/bin/hinge up
