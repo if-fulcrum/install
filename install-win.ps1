@@ -13,11 +13,11 @@ add-type @"
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
 # try see if Git has been installed
-$check_git = Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName
+$check_reg = Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | select DisplayName
 $found_git = $FALSE
 $found_docker = $FALSE
 
-foreach ($item in $check_git) {
+foreach ($item in $check_reg) {
   if ($item.DisplayName -match "Git version.*") {
     $found_git = $TRUE
   }
@@ -57,15 +57,6 @@ if ($found_git) {
 
     Write-Host "Running $exe_path."
     $p = Start-Process $exe_path -wait
-  }
-}
-
-# try see if Git has been installed
-$check_docker = Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Docker* | select DisplayName
-
-foreach ($item in $check_docker) {
-  if ($item.DisplayName -match "Docker*") {
-    $found_docker = $TRUE
   }
 }
 
