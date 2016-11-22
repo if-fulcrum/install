@@ -28,4 +28,4 @@ else
   git pull
 fi
 
-./bin/hinge up
+./bin/fulcrum up
