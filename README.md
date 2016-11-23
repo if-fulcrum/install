@@ -3,7 +3,7 @@
 ## Install Fulcrum on Mac
 Run from terminal:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/if-fulcrum/install/master/mac | bash
+curl -fsSL https://raw.githubusercontent.com/if-fulcrum/install/master/mac.sh | bash
 ```
 
 ## Install Fulcrum on Windows
