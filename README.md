@@ -9,7 +9,7 @@ curl -fsSL https://raw.githubusercontent.com/if-fulcrum/install/master/mac.sh | 
 ## Install Fulcrum Hinge on Ubuntu Destop
 Run from terminal:
 ```bash
-wget -q -O - https://raw.githubusercontent.com/if-fulcrum/install/master/ubuntu.sh | bash
+bash -c "$(wget -q -O - https://raw.githubusercontent.com/if-fulcrum/install/master/ubuntu.sh)"
 ```
 
 ## Install Fulcrum Hinge on Windows
