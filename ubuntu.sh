@@ -13,11 +13,11 @@ else
   sudo apt install -y docker-ce
 fi
 
-# install docker-composer if needed
-if (which docker-composer > /dev/null); then
-  echo "docker-composer exists"
+# install docker-compose if needed
+if (which docker-compose > /dev/null); then
+  echo "docker-compose exists"
 else
-  echo "installing docker-composer"
+  echo "installing docker-compose"
   sudo wget -q -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m`
   sudo chmod +x /usr/local/bin/docker-compose
 fi
