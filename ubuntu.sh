@@ -2,6 +2,15 @@
 
 # usage: wget -q -O - https://raw.githubusercontent.com/if-fulcrum/install/master/ubuntu.sh | bash
 
+# checkout sites repo
+HINGESITESURLDEFAULT=https://github.com/if-fulcrum/hinge-sites.git
+
+read -p "Fulcrum Hinge sites repo URL (default: $HINGESITESURLDEFAULT): " HINGESITESURL
+
+if [ "$HINGESITESURL" = "" ]; then
+  HINGESITESURL=$HINGESITESURLDEFAULT
+fi
+
 # install docker if needed
 if (which docker > /dev/null); then
   echo "docker exists"
@@ -42,15 +51,6 @@ fi
 # checkout fulcrum repo TODO: merge
 git clone https://github.com/if-fulcrum/fulcrum.git ~/fulcrum
 echo "!!! CHECKING OUT BRANCH hinge-ubuntu THIS NEEDS TO CHANGE ONCE MERGED !!!" && cd ~/fulcrum && git checkout hinge-ubuntu
-
-# checkout sites repo
-HINGESITESURLDEFAULT=https://github.com/if-fulcrum/hinge-sites.git
-
-read -p "Please enter Fulcrum Hinge sites repo URL (default: $HINGESITESURLDEFAULT): " HINGESITESURL
-
-if [ "$HINGESITESURL" = "" ]; then
-  HINGESITESURL=$HINGESITESURLDEFAULT
-fi
 
 git clone $HINGESITESURL ~/fulcrum/etc/fulcrum/sites
 
