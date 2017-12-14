@@ -45,10 +45,13 @@ echo "!!! CHECKING OUT BRANCH hinge-ubuntu THIS NEEDS TO CHANGE ONCE MERGED !!!"
 
 # checkout sites repo
 HINGESITESURLDEFAULT=https://github.com/if-fulcrum/hinge-sites.git
+
 read -p "Please enter Fulcrum Hinge sites repo URL (default: $HINGESITESURLDEFAULT): " HINGESITESURL
+
 if [ "$HINGESITESURL" = "" ]; then
   HINGESITESURL=$HINGESITESURLDEFAULT
 fi
+
 git clone $HINGESITESURL ~/fulcrum/etc/fulcrum/sites
 
 # bring up fulcrum
