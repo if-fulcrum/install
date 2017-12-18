@@ -50,8 +50,6 @@ fi
 
 # checkout fulcrum repo TODO: merge
 git clone https://github.com/if-fulcrum/fulcrum.git ~/fulcrum
-echo "!!! CHECKING OUT BRANCH hinge-ubuntu THIS NEEDS TO CHANGE ONCE MERGED !!!" && cd ~/fulcrum && git checkout hinge-ubuntu
-
 git clone $HINGESITESURL ~/fulcrum/etc/fulcrum/sites
 
 # bring up fulcrum
