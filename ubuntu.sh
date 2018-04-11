@@ -16,6 +16,7 @@ if (which docker > /dev/null); then
   echo "docker exists"
 else
   echo "installing docker"
+  sudo apt install -y apt-transport-https
   wget -q -O - https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
   sudo apt update
