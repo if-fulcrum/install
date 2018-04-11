@@ -49,6 +49,14 @@ else
   sudo apt install -y libnss3-tools
 fi
 
+# install git if needed
+if (which git > /dev/null); then
+  echo "git exists"
+else
+  echo "installing git"
+  sudo apt install -y git
+fi
+
 # checkout fulcrum repo TODO: merge
 git clone https://github.com/if-fulcrum/fulcrum.git ~/fulcrum
 git clone $HINGESITESURL ~/fulcrum/etc/fulcrum/sites
