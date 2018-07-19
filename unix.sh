@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
-# (curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) 2> /dev/null | bash
+# bash -c "$((curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) 2> /dev/null)"
 
 function main() {
   # get the prerequisites
