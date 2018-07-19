@@ -3,21 +3,23 @@
 # export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
 # (curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) 2> /dev/null | bash
 
-# get the prerequisites
-getPrerequisites
+function main() {
+  # get the prerequisites
+  getPrerequisites
 
-# clone fulcrum if needed
-if [ ! -d ~/fulcrum ]; then
-  git -C ~/ clone https://github.com/if-fulcrum/fulcrum.git
-fi
+  # clone fulcrum if needed
+  if [ ! -d ~/fulcrum ]; then
+    git -C ~/ clone https://github.com/if-fulcrum/fulcrum.git
+  fi
 
-# pull no matter what
-cd ~/fulcrum
-git pull
+  # pull no matter what
+  cd ~/fulcrum
+  git pull
 
-# bring up fulcrum, doctor should get us into place
-~/fulcrum/bin/fulcrum2 up
-# ~/fulcrum/bin/doctor2
+  # bring up fulcrum, doctor should get us into place
+  ~/fulcrum/bin/fulcrum2 up
+  # ~/fulcrum/bin/doctor2
+}
 
 function getPrerequisites() {
   if ! (which git > /dev/null); then
@@ -50,3 +52,5 @@ function getPrerequisites() {
     fi
   fi
 }
+
+main
