@@ -1,7 +1,15 @@
 #!/bin/bash
 
-# export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
-# bash -c "$((curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) 2> /dev/null)"
+: '
+# Run the following command to install:
+
+export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
+bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
+
+# Note: curl or wget must already be installed
+# '
+
+# TODO: helloSites needs `fulcrum up` for some reason...
 
 function main() {
   # get the prerequisites
