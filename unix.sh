@@ -6,7 +6,6 @@
 export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
 bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 
-# Note: curl or wget must already be installed
 # '
 
 function main() {
