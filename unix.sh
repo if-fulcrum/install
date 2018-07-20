@@ -9,8 +9,6 @@ bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 # Note: curl or wget must already be installed
 # '
 
-# TODO: helloSites needs `fulcrum up` for some reason...
-
 function main() {
   # get the prerequisites
   getPrerequisites
@@ -26,7 +24,6 @@ function main() {
 
   # bring up fulcrum, doctor should get us into place
   ~/fulcrum/bin/fulcrum2 up
-  # ~/fulcrum/bin/doctor2
 }
 
 function getPrerequisites() {
@@ -59,6 +56,11 @@ function getPrerequisites() {
   else
     echo "ERROR: OS $UNAMEA not supported"
     exit 1
+  fi
+
+  # make ssh key if needed
+  if [ ! -d ~/.ssh ]; then
+    ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
   fi
 }
 
