@@ -1,15 +1,10 @@
 # Fulcrum installer
 
-## Install Fulcrum Hinge on Mac
+## Install Fulcrum Hinge on Mac or Ubuntu
 Run from terminal:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/if-fulcrum/install/master/mac.sh | bash
-```
-
-## Install Fulcrum Hinge on Ubuntu Destop
-Run from terminal:
-```bash
-bash -c "$(wget -q -O - https://raw.githubusercontent.com/if-fulcrum/install/master/ubuntu.sh)"
+export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
+bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 ```
 
 ## Install Fulcrum Hinge on Windows
