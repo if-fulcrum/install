@@ -13,7 +13,7 @@ bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 
 ## Install w specific hinge config provided on command line:
 ```bash
-export HINGESOURCE=https://github.com/if-fulcrum/hinge-config.git &&
+echo /tmp/HINGECONFIGREPO > /tmo/HINGECONFIGREPO &&
 export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
 bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 ```
