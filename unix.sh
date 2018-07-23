@@ -3,9 +3,11 @@
 : '
 # Run the following command to install:
 
+echo "https://github.com/if-fulcrum/hinge-config.git" > /tmp/HINGECONFIGREPO &&
 export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
 bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 
+# Note: you can use a custom config by changing the repo URL
 # '
 
 function main() {
