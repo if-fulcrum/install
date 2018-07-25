@@ -24,7 +24,7 @@ function main() {
   git pull
 
   # bring up fulcrum, doctor should get us into place
-  ~/fulcrum/bin/fulcrum2 up
+  ~/fulcrum/bin/fulcrum up
 }
 
 function getPrerequisites() {
