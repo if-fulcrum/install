@@ -37,13 +37,13 @@ function main() {
   echo "To make this permanent, depending on your shell and setup, run one of the following:"
   echo ""
   echo "Ash/Bash:"
-  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.profile"
-  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bash_profile"
-  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bashrc"
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.profile
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bash_profile
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bashrc
   echo ""
   echo "Zsh:"
-  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.zshrc"
-  }
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.zshrc
+}
 
 function getPrerequisites() {
   UNAMEA=$(uname -a)
