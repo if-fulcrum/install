@@ -15,20 +15,35 @@ function main() {
   getPrerequisites
 
   # clone fulcrum if needed
-  if [ ! -d ~/fulcrum ]; then
-    git -C ~/ clone https://github.com/if-fulcrum/fulcrum.git
+  if [ ! -d $HOME/fulcrum ]; then
+    git -C $HOME/ clone https://github.com/if-fulcrum/fulcrum.git
   fi
 
   # pull no matter what
-  cd ~/fulcrum
+  cd $HOME/fulcrum
   git pull
 
   # run doctor to get us into place
-  ~/fulcrum/bin/doctor
+  $HOME/fulcrum/bin/doctor
 
   # bring up fulcrum
-  ~/fulcrum/bin/fulcrum up
-}
+  $HOME/fulcrum/bin/fulcrum up
+
+  # put fulcrum on the path for this session, suggest for permanent
+  echo "Fulcrum Hinge has been installed"
+  echo "Temporarily adding $HOME/fulcrum/bin to \$PATH for this terminal session"
+  export PATH=$HOME/fulcrum/bin:$PATH
+  echo 
+  echo "To make this permanent, depending on your shell and setup, run one of the following:"
+  echo ""
+  echo "Ash/Bash:"
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.profile"
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bash_profile"
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bashrc"
+  echo ""
+  echo "Zsh:"
+  echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.zshrc"
+  }
 
 function getPrerequisites() {
   UNAMEA=$(uname -a)
@@ -63,8 +78,8 @@ function getPrerequisites() {
   fi
 
   # make ssh key if needed
-  if [ ! -d ~/.ssh ]; then
-    ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
+  if [ ! -d $HOME/.ssh ]; then
+    ssh-keygen -t rsa -P "" -f $HOME/.ssh/id_rsa
   fi
 }
 
