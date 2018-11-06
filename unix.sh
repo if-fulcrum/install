@@ -23,7 +23,10 @@ function main() {
   cd ~/fulcrum
   git pull
 
-  # bring up fulcrum, doctor should get us into place
+  # run doctor to get us into place
+  ~/fulcrum/bin/doctor
+
+  # bring up fulcrum
   ~/fulcrum/bin/fulcrum up
 }
 
