@@ -31,10 +31,11 @@ function main() {
 
   # put fulcrum on the path for this session, suggest for permanent
   echo "Fulcrum Hinge has been installed"
-  echo "Temporarily adding $HOME/fulcrum/bin to \$PATH for this terminal session"
-  export PATH=$HOME/fulcrum/bin:$PATH
+
+  # TODO: if we have the install source then we could add to the PATH
+  
   echo 
-  echo "To make this permanent, depending on your shell and setup, run one of the following:"
+  echo "To add Fulcrum commands to your path, depending on your shell and setup, run one of the following:"
   echo ""
   echo "Ash/Bash:"
   echo "export PATH=\$HOME/fulcrum/bin:\$PATH >>~/.profile"
