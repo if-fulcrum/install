@@ -7,11 +7,22 @@ export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.
 bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
 ```
 
-## Install Fulcrum Hinge on Mac or Ubuntu with specific Hinge Config, replacing repo hinge config URL
+## Install Fulcrum Hinge on Mac or Ubuntu giving the Hinge Config URL
 ```bash
-echo "https://github.com/if-fulcrum/hinge-config.git" > /tmp/HINGECONFIGREPO &&
 export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
-bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
+bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) -c https://github.com/if-fulcrum/hinge-config.git"
+```
+
+## Install Fulcrum Hinge on Mac or Ubuntu giving the Hinge Config URL and branch
+```bash
+export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
+bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) -c https://github.com/if-fulcrum/hinge-config.git -r master"
+```
+
+## Install Fulcrum Hinge on Mac or Ubuntu giving the Hinge Config URL and branch and Fulcrum branch
+```bash
+export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
+bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) -b master -r master -c https://github.com/if-fulcrum/hinge-config.git"
 ```
 
 ### Previously there were issues with time not being synchronized on Mac, run this if needed:
