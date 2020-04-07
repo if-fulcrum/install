@@ -1,22 +1,60 @@
 #!/bin/bash
 
 : '
-# Run the following command to install:
+# Run this to install:
 
-echo "https://github.com/if-fulcrum/hinge-config.git" > /tmp/HINGECONFIGREPO &&
 export FSCRIPT=https://raw.githubusercontent.com/if-fulcrum/install/master/unix.sh &&
-bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT)"
+bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) -b master -r master -c https://github.com/if-fulcrum/hinge-config.git"
 
-# Note: you can use a custom config by changing the repo URL
+# See help for options
 # '
 
+# general help, mainly for DevOps folks
+function help() {
+  echo "USAGE: $0"
+  echo "-h                         Show this help"
+  echo "-b <FULCRUM_BRANCH>        Specify Fulcrum branch"
+  echo "-c <HINGE_CONFIG_REPO_URL> Specify Hinge Config repo"
+  echo "-r <HINGE_CONFIG_BRANCH>   Speficy Hinge Config branch"
+}
+
+# abstracted out function to grab parameters
+function getOptions() {
+  while [ -n "$1" ]; do
+    case "$1" in
+      -h) help; exit ;;
+      -b) FULCRUM_BRANCH="$2"; shift ;;
+      -c) HINGE_CONFIG_REPO_URL="$2"; shift ;;
+      -r) HINGE_CONFIG_BRANCH="$2"; shift ;;
+      *) echo "Option $1 not recognized"; exit 1 ;;
+    esac
+    shift
+  done
+}
+
 function main() {
+  # default to master and open hinge config
+  FULCRUM_BRANCH=master
+  HINGE_CONFIG_REPO_URL=https://github.com/if-fulcrum/hinge-config.git
+  HINGE_CONFIG_BRANCH=master
+  getOptions $@
+
+  echo "Starting install of Fulcrum Hinge"
+  echo "* Fulcrum branch:      $FULCRUM_BRANCH"
+  echo "* Hinge Config:        $HINGE_CONFIG_REPO_URL"
+  echo "* Hinge Config branch: $HINGE_CONFIG_BRANCH"
+  echo ""
+
+  # save repo/branch to be picked up by main script
+  echo $HINGE_CONFIG_REPO_URL > /tmp/HINGECONFIGREPO
+  echo $HINGE_CONFIG_BRANCH   > /tmp/HINGECONFIGBRANCH
+
   # get the prerequisites
   getPrerequisites
 
   # clone fulcrum if needed
   if [ ! -d $HOME/fulcrum ]; then
-    git -C $HOME/ clone https://github.com/if-fulcrum/fulcrum.git
+    git -C $HOME/ clone -b $FULCRUM_BRANCH https://github.com/if-fulcrum/fulcrum.git
   fi
 
   # pull no matter what
@@ -33,8 +71,8 @@ function main() {
   echo "Fulcrum Hinge has been installed"
 
   # TODO: if we have the install source then we could add to the PATH
-  
-  echo 
+
+  echo
   echo "To add Fulcrum commands to your path, depending on your shell and setup, run one of the following:"
   echo ""
   echo "Ash/Bash:"
