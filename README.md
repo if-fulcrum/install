@@ -1,5 +1,10 @@
 # Fulcrum installer
 
+* -b <FULCRUM_BRANCH>        Specify Fulcrum branch
+* -c <HINGE_CONFIG_REPO_URL> Specify Hinge Config repo
+* -r <HINGE_CONFIG_BRANCH>   Speficy Hinge Config branch
+
+
 ## Install Fulcrum Hinge on Mac or Ubuntu with example Hinge Config or manually entering
 Run from terminal:
 ```bash
