@@ -22,6 +22,7 @@ This install does not require any software to be installed before hand for the s
  -r <HINGE_CONFIG_BRANCH>     Speficy Hinge Config branch   default: master
  -b <FULCRUM_BRANCH>          Specify Fulcrum branch        default: master
 ```
+Please note: that the HINGE_CONFIG_REPO_URL should be exactly what is provided from your Git source.
 
 ## Install Fulcrum Hinge on Mac or Ubuntu
 ### With example config
