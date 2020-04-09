@@ -1,10 +1,10 @@
 # Fulcrum installer
 
-## Options
+## Install Options
 ```
-* -c <HINGE_CONFIG_REPO_URL>   Specify Hinge Config repo     default: https://github.com/if-fulcrum/hinge-config.git
-* -r <HINGE_CONFIG_BRANCH>     Speficy Hinge Config branch   default: master
-* -b <FULCRUM_BRANCH>          Specify Fulcrum branch        default: master
+ -c <HINGE_CONFIG_REPO_URL>   Specify Hinge Config repo     default: https://github.com/if-fulcrum/hinge-config.git
+ -r <HINGE_CONFIG_BRANCH>     Speficy Hinge Config branch   default: master
+ -b <FULCRUM_BRANCH>          Specify Fulcrum branch        default: master
 ```
 
 ## Install Fulcrum Hinge on Mac or Ubuntu
