@@ -1,5 +1,10 @@
 # Fulcrum installer
 
+## Prerequisite
+This install does not require any software to be installed before hand for the simplest install.
+* If using AWS S3 for site database backups you might want to preconfigure AWS credentials.
+* When using customized Hinge Config you will want to already have SSH keys authorized for pulling the config repository.
+
 ## Install Options
 ```
  -c <HINGE_CONFIG_REPO_URL>   Specify Hinge Config repo     default: https://github.com/if-fulcrum/hinge-config.git
