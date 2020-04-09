@@ -1,9 +1,20 @@
 # Fulcrum installer
 
-## Prerequisite
+## Prerequisites
 This install does not require any software to be installed before hand for the simplest install.
 * If using AWS S3 for site database backups you might want to preconfigure AWS credentials.
 * When using customized Hinge Config you will want to already have SSH keys authorized for pulling the config repository.
+
+## Installed software
+### This install will automatically provide the following software for Mac:
+* Docker for Mac
+* Homebrew
+* Xcode commandline tools
+* AWS commandline
+* Git (from Homebrew & Xcode)
+
+### This install will automatically provide the following software for Ubuntu:
+...
 
 ## Install Options
 ```
