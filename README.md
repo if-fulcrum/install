@@ -37,4 +37,4 @@ bash -c "$(curl -fsSL $FSCRIPT || wget -q -O - $FSCRIPT) -b master"
 sudo ntpdate -u time.apple.com || sudo sntp -sS time.apple.com
 ```
 
-### At this time Windows is not supported for Fulcrum, when it is this will be the install
+### At this time Windows is not supported for Fulcrum
