@@ -2,8 +2,9 @@
 
 ## Prerequisites
 This install does not require any software to be installed before hand for the simplest install.
-* If using AWS S3 for site database backups you might want to preconfigure AWS credentials.
-* When using customized Hinge Config you will want to already have SSH keys authorized for pulling the config repository.
+* If using AWS S3 for site database backups you might want to preconfigure AWS credentials
+* When using customized Hinge Config you will want to already have SSH keys authorized for pulling the config repository
+* If using Ubuntu only current LTS versions are supported
 
 ## Installed software
 ### This install will automatically provide the following software for Mac:
