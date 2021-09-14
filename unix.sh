@@ -76,12 +76,12 @@ function main() {
   echo "To add Fulcrum commands to your path, depending on your shell and setup, run one of the following:"
   echo ""
   echo "Ash/Bash:"
-  echo 'echo "export PATH=\\$HOME/fulcrum/bin:\\$PATH" >>~/.profile'
-  echo 'echo "export PATH=\\$HOME/fulcrum/bin:\\$PATH" >>~/.bash_profile'
-  echo 'echo "export PATH=\\$HOME/fulcrum/bin:\\$PATH" >>~/.bashrc'
+  echo 'echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.profile'
+  echo 'echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bash_profile'
+  echo 'echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.bashrc'
   echo ""
   echo "Zsh:"
-  echo 'echo "export PATH=\\$HOME/fulcrum/bin:\\$PATH" >>~/.zshrc'
+  echo 'echo "export PATH=\$HOME/fulcrum/bin:\$PATH" >>~/.zshrc'
 }
 
 function getPrerequisites() {
